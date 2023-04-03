@@ -1,0 +1,143 @@
+/* Variables */
+
+:root {
+  --bg-body: hsl(0, 0%, 8%);
+  --bg-contact: hsl(0, 0%, 14%);
+  --primary: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 85%);
+  --accent: hsl(153, 71%, 59%);
+  --invalid: hsl(7, 100%, 68%);
+
+  --fs-88: 5.5rem;
+  --fs-72: 4.5rem;
+  --fs-48: 3rem;
+  --fs-40: 2.5rem;
+  --fs-32: 2rem;
+  --fs-24: 1.5rem;
+  --fs-18: 1.125rem;
+
+  --transition: 250ms ease-in-out;
+
+  --container: 69.375rem;
+}
+
+/* Global */
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--bg-body);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: var(--fs-18);
+  font-weight: 500;
+  line-height: 1.56;
+  color: var(--primary);
+  margin: 0;
+}
+
+a {
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+/* h1 {
+  font-size: var(--fs-72);
+  line-height: 1;
+}
+
+h2 {
+  font-size: var(--fs-32);
+} */
+
+/*  Container */
+.wrapper {
+  width: calc(100% - 2rem);
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+@media (min-width: 37.5em) {
+  /* 600px */
+  .wrapper {
+    width: calc(100% - 3.75rem);
+  }
+}
+
+/* Header */
+.header {
+  margin-top: 20px;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 20px 25px;
+}
+
+.header__home {
+  flex: 1 0 100%;
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.02rem + 2.04vw, 2rem);
+  line-height: 1;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.header__social svg {
+  display: block;
+}
+
+.header__social svg path {
+  transition: fill var(--transition);
+}
+
+.header__social:hover svg path {
+  fill: var(--accent);
+}
+
+@media (min-width: 37.5em) {
+  /* 600px */
+  .header__nav {
+    justify-content: flex-start;
+    text-align: left;
+    gap: 32px;
+  }
+
+  .header__home {
+    flex: 1;
+  }
+
+  .header__social {
+    align-self: center;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
